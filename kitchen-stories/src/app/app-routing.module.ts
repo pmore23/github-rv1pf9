@@ -4,8 +4,11 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { BreakfastRecipesComponent } from './breakfast-recipes/breakfast-recipes.component';
 
 const routes: Routes = [
+  { path: '', component: HomePageComponent },
   { path: 'home-page', component: HomePageComponent },
   { path: 'breakfast-recipes', component: BreakfastRecipesComponent },
+  { path: 'nonveg-recipes', component: BreakfastRecipesComponent },
+  { path: 'veg-recipes', component: BreakfastRecipesComponent },
 ];
 
 @NgModule({
