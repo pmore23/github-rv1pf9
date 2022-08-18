@@ -1,4 +1,9 @@
 <mat-toolbar color="primary">
+  <h1>Welcome to {{ title }}</h1>
+  <!-- property binding-->
+  <!--<button mat-raised-button color="primary" [disabled]="btnDisabledFlag">
+    Raised Primary
+  </button>-->
   <mat-toolbar-row>
     <button mat-icon-button>
       <!--<mat-icon (click)="sidenav.toggle()">menu</mat-icon>-->
@@ -6,12 +11,13 @@
     </button>
     <h1 [routerLink]="'/home-page'">Home</h1>
     <div>
-      <a mat-button [routerLink]="'/breakfast-recipes'">Breakfast Recipes</a>
+      <a mat-button [routerLink]="'/snacks-recipes'">Snacks Recipes</a>
       <a mat-button [routerLink]="'/nonveg-recipes'">Non Veg Recipes</a>
       <a mat-button [routerLink]="'/veg-recipes'">Veg Recipes</a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
+
 <!--<mat-sidenav-container>
   <mat-sidenav #sidenav>
     <mat-nav-list>
