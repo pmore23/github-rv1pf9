@@ -37,6 +37,41 @@
   </mat-grid-list>
 </div>
 
+<div>
+  <h2>Property binding examples</h2>
+  <button [disabled]="btnDisabledFlag" [ngClass]="buttonColor">
+    test button
+  </button>
+  <hr />
+  <img [src]="imgSourceUrl" height="200" width="200" />
+  <span>First image with property binding of <i>src</i> property</span><br />
+  <img src="{{ imgSourceUrl }}" height="200" width="200" />
+  <span>Second image with interpolation string in <i>src</i> property</span>
+  <hr />
+  <table [border]="tableBorder">
+    <thead></thead>
+    <tbody>
+      <tr>
+        <td [colSpan]="2">colspan 2</td>
+      </tr>
+      <tr>
+        <td>column 1</td>
+        <td>column 2</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>{{ interpolatedString }}</h4>
+  <p>
+    <span innerHTML="{{ interpolatedString }}"></span>
+    <span> in innerHTML property binding</span>
+  </p>
+  <h3>child to parent data binding using @input</h3>
+  <app-snacks-recipe
+    [itemList]="snackItemList"
+    [item]="snackItem"
+  ></app-snacks-recipe>
+</div>
+
 <!--<h1 class="mat-display-1">Easy, Breezy, Beautiful: Angular Material</h1>
 
 <p>Here are some random angular material components</p>

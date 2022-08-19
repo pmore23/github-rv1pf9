@@ -17,6 +17,28 @@ export class HomePageComponent implements OnInit {
     'Sausage',
     'Tomato',
   ];
+  btnDisabledFlag = true; // property binding
+  buttonColor = 'btnColor';
+  imgSourceUrl =
+    'https://cdn.pixabay.com/photo/2018/10/11/12/31/black-cat-3739702_1280.jpg';
+
+  tableBorder = '1';
+  snackItem = 'Pohe';
+  snackItemList = [
+    {
+      id: 1,
+      name: 'sandwich',
+    },
+    {
+      id: 2,
+      name: 'dosa',
+    },
+    {
+      id: 3,
+      name: 'Idli',
+    },
+  ];
+  interpolatedString = ' I am an interpolated string';
   constructor() {}
 
   ngOnInit(): void {}

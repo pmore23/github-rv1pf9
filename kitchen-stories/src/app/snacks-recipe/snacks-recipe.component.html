@@ -1,1 +1,10 @@
 <p>snacks-recipe works!</p>
+
+<p *ngIf="item">{{ item }} passed from parent component</p>
+
+<div *ngIf="itemList">
+  <h4>Snacks List from child component</h4>
+  <ul *ngFor="let item of itemList">
+    <li>{{ item.id }}&nbsp;{{ item.name }}</li>
+  </ul>
+</div>
