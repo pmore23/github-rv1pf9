@@ -42,7 +42,12 @@
   <button [disabled]="btnDisabledFlag" [ngClass]="buttonColor">
     disabled button
   </button>
-  <button ng-class="{btnColor : true, btnText: buttonText}" (click)="btnClicked($event)">Click Me</button>
+  <button
+    [ngClass]="{ btnColor: true, btnText: buttonText }"
+    (click)="btnClicked($event)"
+  >
+    Click Me
+  </button>
   <hr />
   <img [src]="imgSourceUrl" height="200" width="200" />
   <span>First image with property binding of <i>src</i> property</span><br />
@@ -70,7 +75,15 @@
   <app-snacks-recipe
     [itemList]="snackItemList"
     [item]="snackItem"
+    (newItemEvent)="addItem($event)"
   ></app-snacks-recipe>
+  <h2>Data sharing between components</h2>
+  <p><b>below few snacks items are added from child component</b></p>
+  <div>
+    <ul *ngFor="let snackItem of snackItemList">
+      <li>{{ snackItem.id }}&nbsp;{{ snackItem.name }}</li>
+    </ul>
+  </div>
 </div>
 
 <!--<h1 class="mat-display-1">Easy, Breezy, Beautiful: Angular Material</h1>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { BackendMockService } from '../shared/services/backend-mock.service';
 import { Item } from '../shared/model/Item';
@@ -11,7 +11,17 @@ import { Item } from '../shared/model/Item';
 export class SnacksRecipeComponent implements OnInit {
   @Input() item: String;
   @Input() itemList: Item[];
+  @Output() newItemEvent = new EventEmitter<Object>();
+
   constructor(private backendService: BackendMockService) {}
 
   ngOnInit(): void {}
+
+  addNewItem(id: String, name: String) {
+    let itemObj = {
+      id: id,
+      name: name,
+    };
+    this.newItemEvent.emit(itemObj);
+  }
 }

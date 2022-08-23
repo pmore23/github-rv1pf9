@@ -25,6 +25,7 @@ export class HomePageComponent implements OnInit {
 
   tableBorder = '1';
   snackItem = 'Pohe';
+
   snackItemList = [
     {
       id: 1,
@@ -46,5 +47,9 @@ export class HomePageComponent implements OnInit {
 
   btnClicked(event: MouseEvent) {
     console.log('button was clicked : ', event);
+  }
+
+  addItem(itemParam: any) {
+    this.snackItemList.push(itemParam);
   }
 }

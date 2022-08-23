@@ -10,9 +10,11 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BackendMockService } from './shared/services/backend-mock.service';
 import { SnacksRecipeComponent } from './snacks-recipe/snacks-recipe.component';
+import { NonVegRecipeComponent } from './non-veg-recipe/non-veg-recipe.component';
+import { VegRecipeComponent } from './veg-recipe/veg-recipe.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, SnacksRecipeComponent],
+  declarations: [AppComponent, HomePageComponent, SnacksRecipeComponent, NonVegRecipeComponent, VegRecipeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
