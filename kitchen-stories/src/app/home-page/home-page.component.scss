@@ -25,3 +25,11 @@ button {
   opacity: 0.75;
   font-size: 0.75em;
 }
+
+.btnColor {
+  background-color: pink;
+}
+
+.btnText:hover {
+  color: black;
+}

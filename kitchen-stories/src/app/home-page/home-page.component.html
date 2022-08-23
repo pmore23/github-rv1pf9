@@ -40,8 +40,9 @@
 <div>
   <h2>Property binding examples</h2>
   <button [disabled]="btnDisabledFlag" [ngClass]="buttonColor">
-    test button
+    disabled button
   </button>
+  <button ng-class="{btnColor : true, btnText: buttonText}" (click)="btnClicked($event)">Click Me</button>
   <hr />
   <img [src]="imgSourceUrl" height="200" width="200" />
   <span>First image with property binding of <i>src</i> property</span><br />
