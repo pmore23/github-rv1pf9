@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { SnacksRecipeComponent } from '../snacks-recipe/snacks-recipe.component';
 
 @Component({
   selector: 'app-home-page',
@@ -7,12 +8,17 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
+  @ViewChild(SnacksRecipeComponent)
+  private snacksRecipeComponent = {} as SnacksRecipeComponent;
+  @ViewChild('myName')
+  private myName = {} as ElementRef;
   toppings = new FormControl('');
 
   toppingList: string[] = [
     'Extra cheese',
     'Mushroom',
     'Onion',
+
     'Pepperoni',
     'Sausage',
     'Tomato',
@@ -51,5 +57,17 @@ export class HomePageComponent implements OnInit {
 
   addItem(itemParam: any) {
     this.snackItemList.push(itemParam);
+  }
+
+  increase() {
+    this.snacksRecipeComponent.increaseByOne();
+  }
+  decrease() {
+    this.snacksRecipeComponent.decreaseByOne();
+  }
+
+  //viewchild ElementRef example
+  ngAfterViewInit() {
+    this.myName.nativeElement.style.background = 'cyan';
   }
 }

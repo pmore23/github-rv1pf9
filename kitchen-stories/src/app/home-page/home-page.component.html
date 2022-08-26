@@ -71,7 +71,9 @@
     <span innerHTML="{{ interpolatedString }}"></span>
     <span> in innerHTML property binding</span>
   </p>
-  <h3>child to parent data binding using @input</h3>
+  <h3>
+    child to parent data binding using @Input(), parent to child using @Output()
+  </h3>
   <app-snacks-recipe
     [itemList]="snackItemList"
     [item]="snackItem"
@@ -84,6 +86,12 @@
       <li>{{ snackItem.id }}&nbsp;{{ snackItem.name }}</li>
     </ul>
   </div>
+  <h3>Child to parent using @ViewChild</h3>
+  <button (click)="increase()">Increase Counter by 1</button>
+  <button (click)="decrease()">Decrease Counter by 1</button>
+
+  <h3>Example for @ViewChild using ElementRef</h3>
+  <div><label>Name</label> <input type="text" id="name" #myName /></div>
 </div>
 
 <!--<h1 class="mat-display-1">Easy, Breezy, Beautiful: Angular Material</h1>

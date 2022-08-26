@@ -13,6 +13,9 @@ export class SnacksRecipeComponent implements OnInit {
   @Input() itemList: Item[];
   @Output() newItemEvent = new EventEmitter<Object>();
 
+  message: String = '';
+  count: number = 0;
+
   constructor(private backendService: BackendMockService) {}
 
   ngOnInit(): void {}
@@ -23,5 +26,14 @@ export class SnacksRecipeComponent implements OnInit {
       name: name,
     };
     this.newItemEvent.emit(itemObj);
+  }
+
+  increaseByOne() {
+    this.count = this.count + 1;
+    this.message = 'Counter : ' + this.count;
+  }
+  decreaseByOne() {
+    this.count = this.count - 1;
+    this.message = 'Counter : ' + this.count;
   }
 }
